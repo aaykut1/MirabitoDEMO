@@ -1,0 +1,16 @@
+<form #employeeAddForm="ngForm" (ngSubmit)="add()">
+    <div class="form-group container col-9 mt-3">
+        <input type="text" placeholder="Frist Name" #name="ngModel" [(ngModel)]="model.first_name" class="form-control mb-3" name="first_name" id="first_name" required>
+        <div *ngIf="name.invalid && name.dirty" class="alert alert-danger"> Please provide a first name  </div>
+
+        <input type="text" placeholder="Last Name" #description="ngModel" [(ngModel)]="model.last_name" class="form-control mb-3" name="last_name" id="last_name" required>
+        <div *ngIf="description.invalid && description.dirty" class="alert alert-danger"> Please provide a last name  </div>
+
+        <input type="number" placeholder="Salary" #imgUrl="ngModel" [(ngModel)]="model.salary" class="form-control mb-3" name="salary" id="salary" required>
+        <div *ngIf="imgUrl.invalid && imgUrl.dirty" class="alert alert-danger"> Please provide salary  </div>
+
+        <button type="submit" class="btn btn-dark form-control container d-flex justify-content-center" [disabled]="employeeAddForm.invalid"> Submit</button>
+
+    </div>
+
+</form>
